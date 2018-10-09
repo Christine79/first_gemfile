@@ -21,7 +21,7 @@ def roule (my_array, my_array_alph)
   puts "my_array      " + my_array.to_s
   puts "my arary alph " + my_array_alph.to_s
   final_array = []
-  my_array.each do |a|
+  my_array.each do  |a|
 
 # trouve =  /[A-Z&&a-z]/i.match(i)
     trouve =  /[a-z]/i.match(a)
