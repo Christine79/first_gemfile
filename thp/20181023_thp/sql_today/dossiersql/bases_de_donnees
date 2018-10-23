@@ -1,0 +1,46 @@
+exemple:
+--------
+
+
+CREATE TABLE `doctors` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT,
+`age` INTEGER,
+`specialty` TEXT
+);
+
+
+Base de données Users
+---------------------
+
+
+CREATE TABLE `users` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT,
+`id_article` INTEGER ,
+FOREIGN KEY (id_article) REFERENCES articles (id_article)
+); ===> OK
+
+
+CREATE TABLE `articles` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT ,
+'id_user' INTEGER   ,
+ `name` TEXT, 'id_category' INTEGER ,
+ FOREIGN KEY (id_user) REFERENCES users (id_user),
+ FOREIGN KEY (id_category) REFERENCES category (id_category)
+); ===>> OK
+
+
+CREATE TABLE `category` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT ,
+'id_tag' INTEGER , `name` TEXT,
+FOREIGN KEY (id_tag) REFERENCES tag (id_tag)
+); ==>> OK
+
+
+CREATE TABLE `tag` (
+`id` INTEGER PRIMARY KEY AUTOINCREMENT ,
+ `name` TEXT
+); ==>> OK
+
+
+
+INSERT INTO users (name, id_article) VALUES ('Kiki', 01);
